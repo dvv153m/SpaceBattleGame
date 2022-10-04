@@ -1,7 +1,7 @@
 ﻿
 namespace SpaceBattleGame.Server.Commands.Rotate
 {
-    public class RotateCommand
+    public class RotateCommand : ICommand
     {
         private IRotable _rotable;
 

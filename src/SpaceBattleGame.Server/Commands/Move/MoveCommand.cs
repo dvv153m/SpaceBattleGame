@@ -1,7 +1,7 @@
 ﻿
 namespace SpaceBattleGame.Server.Commands.Move
 {
-    public class MoveCommand
+    public class MoveCommand : ICommand
     {
         private IMovable _movable;
 
