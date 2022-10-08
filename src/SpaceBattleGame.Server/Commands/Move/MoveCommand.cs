@@ -11,8 +11,16 @@ namespace SpaceBattleGame.Server.Commands.Move
         }
 
         public void Execute()
-        {
+        {            
+            if (_movable.Velocity == null)
+                throw new ArgumentNullException(nameof(_movable.Velocity));
+
             _movable.Position += _movable.Velocity;
+        }
+
+        public override string ToString()
+        {
+            return "MoveCommand";
         }
     }
 }
