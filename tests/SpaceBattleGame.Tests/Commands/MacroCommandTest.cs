@@ -89,6 +89,10 @@ namespace SpaceBattleGame.Server.Tests.Commands
             mockFuelable.SetupGet<int>(m => m.FuelVolume).Returns(10);
             mockFuelable.SetupGet<int>(m => m.FuelRate).Returns(1);
 
+            mockRotable.SetupGet(r => r.Direction).Returns(1);
+            mockRotable.SetupGet(r => r.AngularVelocity).Returns(2);
+            mockRotable.SetupGet(r => r.DirectionsNumber).Returns(8);
+
             var commands = new ICommand[]
             {
                 new MoveCommand(mockMovable.Object),
