@@ -2,7 +2,7 @@
 using SpaceBattleGame.Server.Commands.Rotate;
 using SpaceBattleGame.Server.Exceptions;
 
-namespace SpaceBattleGame.Tests
+namespace SpaceBattleGame.Server.Tests.Commands
 {
     public class RotateCommandTest
     {

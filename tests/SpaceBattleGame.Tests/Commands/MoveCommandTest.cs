@@ -3,7 +3,7 @@ using SpaceBattleGame.Server.Commands.Move;
 using SpaceBattleGame.Server.Common;
 using SpaceBattleGame.Server.Exceptions;
 
-namespace SpaceBattleGame.Tests
+namespace SpaceBattleGame.Server.Tests.Commands
 {
     public class MoveCommandTest
     {
@@ -15,8 +15,8 @@ namespace SpaceBattleGame.Tests
         {
             //Arrange
             Mock<IMovable> mockMovable = new Mock<IMovable>();
-            mockMovable.SetupGet<Vector>(m => m.Position).Returns(new Vector(12, 5));
-            mockMovable.SetupGet<Vector>(m => m.Velocity).Returns(new Vector(-7, 3));
+            mockMovable.SetupGet(m => m.Position).Returns(new Vector(12, 5));
+            mockMovable.SetupGet(m => m.Velocity).Returns(new Vector(-7, 3));
 
             //Act
             new MoveCommand(mockMovable.Object).Execute();
@@ -33,8 +33,8 @@ namespace SpaceBattleGame.Tests
         {
             //Arrange
             Mock<IMovable> mockMovable = new Mock<IMovable>();
-            mockMovable.SetupGet<Vector>(m => m.Position).Throws(new MoveException("can not read position"));
-            mockMovable.SetupGet<Vector>(m => m.Velocity).Returns(new Vector(-7, 3));
+            mockMovable.SetupGet(m => m.Position).Throws(new MoveException("can not read position"));
+            mockMovable.SetupGet(m => m.Velocity).Returns(new Vector(-7, 3));
 
             //Act            
             var exception = Assert.Throws<MoveException>(
@@ -55,8 +55,8 @@ namespace SpaceBattleGame.Tests
         {
             //Arrange
             Mock<IMovable> mockMovable = new Mock<IMovable>();
-            mockMovable.SetupGet<Vector>(m => m.Position).Returns(new Vector(12, 5));
-            mockMovable.SetupGet<Vector>(m => m.Velocity).Throws(new MoveException("can not read angular velocity"));
+            mockMovable.SetupGet(m => m.Position).Returns(new Vector(12, 5));
+            mockMovable.SetupGet(m => m.Velocity).Throws(new MoveException("can not read angular velocity"));
 
             //Act            
             var exception = Assert.Throws<MoveException>(
@@ -78,7 +78,7 @@ namespace SpaceBattleGame.Tests
             //Arrange
             Mock<IMovable> mockMovable = new Mock<IMovable>();
             mockMovable.SetupSet<Vector>(m => m.Position = It.IsAny<Vector>()).Throws(new MoveException("object can not be change position"));
-            mockMovable.SetupGet<Vector>(m => m.Velocity).Returns(new Vector(-7, 3));
+            mockMovable.SetupGet(m => m.Velocity).Returns(new Vector(-7, 3));
 
             //Act            
             var exception = Assert.Throws<MoveException>(

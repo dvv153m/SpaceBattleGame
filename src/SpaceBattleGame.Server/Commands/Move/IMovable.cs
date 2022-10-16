@@ -11,8 +11,8 @@ namespace SpaceBattleGame.Server.Commands.Move
         Vector Position { get; set; }
 
         /// <summary>
-        /// Скорость объекта
+        /// Мгновенная скорость объекта
         /// </summary>
-        Vector Velocity { get; }
+        Vector Velocity { get; set; }        
     }
 }
