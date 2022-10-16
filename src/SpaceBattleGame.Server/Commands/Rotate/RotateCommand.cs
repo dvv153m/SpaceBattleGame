@@ -14,5 +14,10 @@ namespace SpaceBattleGame.Server.Commands.Rotate
         {
             _rotable.Direction = (_rotable.Direction + _rotable.AngularVelocity) % _rotable.DirectionsNumber;
         }
+
+        public override string ToString()
+        {
+            return "RotateCommand";
+        }
     }
 }
