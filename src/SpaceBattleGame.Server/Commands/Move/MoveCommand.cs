@@ -11,7 +11,7 @@ namespace SpaceBattleGame.Server.Commands.Move
         }
 
         public void Execute()
-        {            
+        {             
             if (_movable.Velocity == null)
                 throw new ArgumentNullException(nameof(_movable.Velocity));
 

@@ -24,10 +24,10 @@ namespace SpaceBattleGame.Server.Tests
             {
                 Console.SetOut(consoleText);
                 logCommand.Execute();
-                
+
                 //Assert
-                Assert.Equal(consoleText.ToString(), expectedText);                
-            }            
+                Assert.Equal(consoleText.ToString(), expectedText);
+            }
         }
 
         /// <summary>
@@ -40,13 +40,13 @@ namespace SpaceBattleGame.Server.Tests
             Mock<IMovable> mockMovable = new Mock<IMovable>();
             Queue<ICommand> _queueCommands = new Queue<ICommand>();
             var moveCommand = new MoveCommand(mockMovable.Object);
-            
-            var exceptionHandler = new ExceptionHandler();            
+
+            var exceptionHandler = new ExceptionHandler();
             exceptionHandler.Setup(typeof(MoveCommand), typeof(ArgumentNullException), (cmd, ex) => _queueCommands.Enqueue(new LogCommand(cmd, ex)));
             var expectedCountCommand = 1;
 
             //Act
-            exceptionHandler.Handle(moveCommand, new ArgumentNullException());            
+            exceptionHandler.Handle(moveCommand, new ArgumentNullException());
 
             //Assert
             Assert.Equal(_queueCommands.Count, expectedCountCommand);
@@ -71,7 +71,7 @@ namespace SpaceBattleGame.Server.Tests
             });
 
             //Assert
-            Assert.NotNull(exception);            
+            Assert.NotNull(exception);
         }
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace SpaceBattleGame.Server.Tests
             Mock<IMovable> mockMovable = new Mock<IMovable>();
             Queue<ICommand> queueCommands = new Queue<ICommand>();
             var moveCommand = new MoveCommand(mockMovable.Object);
-      
+
             var exceptionHandler = new ExceptionHandler();
             exceptionHandler.Setup(typeof(MoveCommand), typeof(ArgumentNullException), (cmd, ex) => queueCommands.Enqueue(new OneCommand(cmd)));
             var expectedCountCommand = 1;
 
             //Act
             exceptionHandler.Handle(moveCommand, new ArgumentNullException());
-            
+
             //Assert
             Assert.Equal(queueCommands.Count, expectedCountCommand);
         }
@@ -102,11 +102,11 @@ namespace SpaceBattleGame.Server.Tests
         /// </summary>
         [Fact]
         public void ExceptionHandler_MoveCommandThrowException_RepeatCommandAndOutputConsoleException()
-        {            
+        {
             //Arrange
-            Mock<ICommand> mockCommand = new Mock<ICommand>();            
-            mockCommand.Setup(x => x.ToString()).Returns("MoveCommand");                        
-            mockCommand.Setup(x => x.Execute()).Throws(new ArgumentNullException());            
+            Mock<ICommand> mockCommand = new Mock<ICommand>();
+            mockCommand.Setup(x => x.ToString()).Returns("MoveCommand");
+            mockCommand.Setup(x => x.Execute()).Throws(new ArgumentNullException());
 
             Queue<ICommand> queueCommands = new Queue<ICommand>();
             queueCommands.Enqueue(mockCommand.Object);
@@ -142,7 +142,7 @@ namespace SpaceBattleGame.Server.Tests
                 //Assert            
                 Assert.True(consoleText.ToString().StartsWith(expectedText));
                 Assert.True(expectedCommandCount == commandCount);
-            }            
+            }
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace SpaceBattleGame.Server.Tests
         /// </summary>
         [Fact]
         public void ExceptionHandler_MoveCommandThrowException_RepeatTwoCommandAndOutputConsoleException()
-        {            
+        {
             //Arrange
             Mock<ICommand> mockCommand = new Mock<ICommand>();
             mockCommand.Setup(x => x.ToString()).Returns("MoveCommand");
@@ -193,6 +193,6 @@ namespace SpaceBattleGame.Server.Tests
                 Assert.True(consoleText.ToString().StartsWith(expectedText));
                 Assert.True(expectedCommandCount == commandCount);
             }
-        }        
+        }
     }
 }
