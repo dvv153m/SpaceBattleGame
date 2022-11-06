@@ -7,11 +7,16 @@ namespace IoC
     {
         private static ThreadLocal<ScopeController> _scopeController = new ThreadLocal<ScopeController>();
 
+        private static readonly object _lockObj = new object();
+
         public static T Resolve<T>(string cmd, params object[] parameters)
         {
-            if (_scopeController.Value == null)
+            lock (_lockObj)
             {
-                _scopeController.Value = new ScopeController();
+                if (_scopeController.Value == null)
+                {
+                    _scopeController.Value = new ScopeController();
+                }
             }
 
             Assembly assembly = Assembly.GetExecutingAssembly();
