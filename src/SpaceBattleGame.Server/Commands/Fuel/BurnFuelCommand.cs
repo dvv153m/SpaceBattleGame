@@ -1,5 +1,6 @@
 ﻿
 
+using SpaceBattleGame.Contracts.Commands;
 using SpaceBattleGame.Server.Exceptions;
 
 namespace SpaceBattleGame.Server.Commands.Fuel

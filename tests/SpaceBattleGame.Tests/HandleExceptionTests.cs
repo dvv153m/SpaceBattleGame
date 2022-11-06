@@ -1,8 +1,9 @@
 ﻿using Moq;
+using SpaceBattleGame.Contracts.Commands;
 using SpaceBattleGame.Server.Commands.Move;
 using SpaceBattleGame.Server.Exceptions;
 using SpaceBattleGame.Server.Exceptions.CommandsExceptionHandler;
-using ICommand = SpaceBattleGame.Server.Commands.ICommand;
+//using ICommand = SpaceBattleGame.Server.Commands.ICommand;
 
 namespace SpaceBattleGame.Server.Tests
 {

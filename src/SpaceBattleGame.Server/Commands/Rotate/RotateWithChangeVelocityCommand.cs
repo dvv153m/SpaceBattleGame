@@ -1,4 +1,5 @@
-﻿using SpaceBattleGame.Server.Commands.Move;
+﻿using SpaceBattleGame.Contracts.Commands;
+using SpaceBattleGame.Server.Commands.Move;
 using SpaceBattleGame.Server.Exceptions;
 
 namespace SpaceBattleGame.Server.Commands.Rotate

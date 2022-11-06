@@ -1,4 +1,4 @@
-﻿using SpaceBattleGame.Server.Commands;
+﻿using SpaceBattleGame.Contracts.Commands;
 
 namespace SpaceBattleGame.Server.Exceptions.CommandsExceptionHandler
 {

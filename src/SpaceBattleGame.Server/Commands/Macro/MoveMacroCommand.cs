@@ -1,4 +1,5 @@
-﻿using SpaceBattleGame.Server.Commands.Fuel;
+﻿using SpaceBattleGame.Contracts.Commands;
+using SpaceBattleGame.Server.Commands.Fuel;
 using SpaceBattleGame.Server.Commands.Move;
 using SpaceBattleGame.Server.Commands.Rotate;
 using SpaceBattleGame.Server.Exceptions;
@@ -7,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace SpaceBattleGame.Server.Commands.Macro
 {
