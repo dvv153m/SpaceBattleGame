@@ -17,25 +17,25 @@ namespace IoC
                 {
                     _scopeController.Value = new ScopeController();
                 }
-            }
 
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            Type type = assembly.GetType(cmd);
-            if (type != null)
-            {
-                ConstructorInfo ctor = type.GetConstructors().FirstOrDefault();
-                T instance = (T)ctor.Invoke(new object[] { _scopeController.Value, parameters });                
-                return instance;
-            }
-            else
-            {
-                Dictionary<string, Func<object[], object>> dependencies = _scopeController.Value.GetDependenciesFromCurrentScope();                
-                if (dependencies.TryGetValue(cmd, out var value))
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                Type type = assembly.GetType(cmd);
+                if (type != null)
                 {
-                    return (T)(value(parameters));
+                    ConstructorInfo ctor = type.GetConstructors().FirstOrDefault();
+                    T instance = (T)ctor.Invoke(new object[] { _scopeController.Value, parameters });
+                    return instance;
                 }
-                return default(T);
-            }            
+                else
+                {
+                    Dictionary<string, Func<object[], object>> dependencies = _scopeController.Value.GetDependenciesFromCurrentScope();
+                    if (dependencies.TryGetValue(cmd, out var value))
+                    {
+                        return (T)(value(parameters));
+                    }
+                    return default(T);
+                }
+            }
         }
     }
 }
