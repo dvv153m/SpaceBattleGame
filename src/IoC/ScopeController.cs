@@ -1,4 +1,6 @@
-﻿namespace IoC
+﻿using System.Collections.Concurrent;
+
+namespace IoC
 {
     public class ScopeController
     {
@@ -17,12 +19,12 @@
             }
         }
 
-        private Dictionary<string, Dictionary<string, Func<object[], object>>> _scopes = new();
+        private ConcurrentDictionary<string, Dictionary<string, Func<object[], object>>> _scopes = new();
 
         public ScopeController()
         {
-            _currentScopeId = "DefaultScope";
-            _scopes.Add(_currentScopeId, new Dictionary<string, Func<object[], object>>());
+            _currentScopeId = "DefaultScope";            
+            _scopes.TryAdd(_currentScopeId, new Dictionary<string, Func<object[], object>>());
         }
 
         public Dictionary<string, Func<object[], object>> GetDependenciesFromCurrentScope()
