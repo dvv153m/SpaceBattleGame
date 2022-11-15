@@ -10,8 +10,8 @@ namespace SpaceBattleGame.Server.Tests
         public void IoC_Register()
         {
             //Arrange
-            Mock<IMovable> mockMovable = new Mock<IMovable>();            
-
+            Mock<IMovable> mockMovable = new Mock<IMovable>();
+            
             //Act
             IoC.IoC.Resolve<ICommand>("IoC.Register", "MoveCommand", (object[] args) => new MoveCommand((IMovable)args[0])).Execute();            
             var moveCommand = IoC.IoC.Resolve<ICommand>("MoveCommand", mockMovable.Object);

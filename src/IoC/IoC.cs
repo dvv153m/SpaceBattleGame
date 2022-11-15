@@ -1,5 +1,4 @@
-﻿using SpaceBattleGame.Contracts.Commands;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace IoC
 {
@@ -30,12 +29,12 @@ namespace IoC
                 {
                     Dictionary<string, Func<object[], object>> dependencies = _scopeController.Value.GetDependenciesFromCurrentScope();
                     if (dependencies.TryGetValue(cmd, out var value))
-                    {
+                    {                        
                         return (T)(value(parameters));
-                    }
-                    return default(T);
+                    }                    
                 }
+                return default(T);
             }
         }
-    }
+    }    
 }

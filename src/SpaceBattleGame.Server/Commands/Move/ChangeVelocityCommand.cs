@@ -1,6 +1,6 @@
 ﻿using SpaceBattleGame.Contracts.Commands;
-using SpaceBattleGame.Server.Commands.Rotate;
-using SpaceBattleGame.Server.Common;
+using SpaceBattleGame.Contracts.Common;
+
 
 namespace SpaceBattleGame.Server.Commands.Move
 {

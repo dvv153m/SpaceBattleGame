@@ -1,5 +1,10 @@
-﻿
-namespace SpaceBattleGame.Server.Commands.Rotate
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SpaceBattleGame.Contracts.Commands
 {
     public interface IRotable
     {

@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\IoC\IoC.csproj" />
+    <ProjectReference Include="..\..\src\Plugins\MovePlugin\FastMovePlugin.csproj" />
     <ProjectReference Include="..\..\src\SpaceBattleGame.Server\SpaceBattleGame.Server.csproj" />
   </ItemGroup>
 

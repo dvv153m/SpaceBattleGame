@@ -1,4 +1,6 @@
 ﻿using Moq;
+using SpaceBattleGame.Contracts.Commands;
+using SpaceBattleGame.Contracts.Common;
 using SpaceBattleGame.Server.Commands.Move;
 using SpaceBattleGame.Server.Common;
 using SpaceBattleGame.Server.Exceptions;

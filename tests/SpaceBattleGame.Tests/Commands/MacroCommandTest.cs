@@ -1,5 +1,6 @@
 ﻿using Moq;
 using SpaceBattleGame.Contracts.Commands;
+using SpaceBattleGame.Contracts.Common;
 using SpaceBattleGame.Server.Commands.Fuel;
 using SpaceBattleGame.Server.Commands.Macro;
 using SpaceBattleGame.Server.Commands.Move;

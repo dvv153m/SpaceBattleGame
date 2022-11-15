@@ -1,4 +1,5 @@
-﻿namespace SpaceBattleGame.Server.Common
+﻿
+namespace SpaceBattleGame.Contracts.Common
 {
     public class Vector
     {
