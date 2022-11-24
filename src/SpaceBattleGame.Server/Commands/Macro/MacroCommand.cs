@@ -1,4 +1,5 @@
-﻿using SpaceBattleGame.Server.Exceptions;
+﻿using SpaceBattleGame.Contracts.Commands;
+using SpaceBattleGame.Server.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

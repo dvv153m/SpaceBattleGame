@@ -1,9 +1,9 @@
-﻿
-using SpaceBattleGame.Server.Common;
+﻿using SpaceBattleGame.Contracts.Common;
 
-namespace SpaceBattleGame.Server.Commands.Move
+
+namespace FastMovePlugin
 {
-    public interface IMovable
+    public interface IFastMovable
     {
         /// <summary>
         /// Текущая позиция объекта
@@ -13,6 +13,6 @@ namespace SpaceBattleGame.Server.Commands.Move
         /// <summary>
         /// Мгновенная скорость объекта
         /// </summary>
-        Vector Velocity { get; set; }        
+        Vector Velocity { get; set; }
     }
 }

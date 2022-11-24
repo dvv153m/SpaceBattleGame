@@ -1,19 +1,19 @@
-﻿
-using SpaceBattleGame.Contracts.Commands;
+﻿using SpaceBattleGame.Contracts.Commands;
 
-namespace SpaceBattleGame.Server.Commands.Move
+
+namespace FastMovePlugin
 {
-    public class MoveCommand : ICommand
+    public class FastMoveCommand : ICommand
     {
-        private IMovable _movable;
+        private IFastMovable _movable;
 
-        public MoveCommand(IMovable movable)
+        public FastMoveCommand(IFastMovable movable)
         {
             _movable = movable ?? throw new ArgumentNullException(nameof(movable));
         }
 
         public void Execute()
-        {             
+        {
             if (_movable.Velocity == null)
                 throw new ArgumentNullException(nameof(_movable.Velocity));
 
@@ -22,7 +22,7 @@ namespace SpaceBattleGame.Server.Commands.Move
 
         public override string ToString()
         {
-            return "MoveCommand";
+            return "FastMoveCommand";
         }
     }
 }

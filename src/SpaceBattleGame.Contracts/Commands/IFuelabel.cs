@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceBattleGame.Server.Commands.Fuel
+namespace SpaceBattleGame.Contracts.Commands
 {
     public interface IFuelabel
     {

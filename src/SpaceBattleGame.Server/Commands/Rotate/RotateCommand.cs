@@ -1,4 +1,6 @@
 ﻿
+using SpaceBattleGame.Contracts.Commands;
+
 namespace SpaceBattleGame.Server.Commands.Rotate
 {
     public class RotateCommand : ICommand

@@ -1,15 +1,11 @@
 ﻿using Moq;
-using SpaceBattleGame.Server.Commands;
+using SpaceBattleGame.Contracts.Commands;
+using SpaceBattleGame.Contracts.Common;
 using SpaceBattleGame.Server.Commands.Fuel;
 using SpaceBattleGame.Server.Commands.Macro;
 using SpaceBattleGame.Server.Commands.Move;
 using SpaceBattleGame.Server.Commands.Rotate;
 using SpaceBattleGame.Server.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SpaceBattleGame.Server.Tests.Commands
 {

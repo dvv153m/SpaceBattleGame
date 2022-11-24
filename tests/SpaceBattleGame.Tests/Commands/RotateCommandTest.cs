@@ -1,4 +1,5 @@
 ﻿using Moq;
+using SpaceBattleGame.Contracts.Commands;
 using SpaceBattleGame.Server.Commands.Rotate;
 using SpaceBattleGame.Server.Exceptions;
 

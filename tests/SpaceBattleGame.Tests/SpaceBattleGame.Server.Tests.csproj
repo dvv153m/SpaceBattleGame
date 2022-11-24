@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\IoC\IoC.csproj" />
     <ProjectReference Include="..\..\src\SpaceBattleGame.Server\SpaceBattleGame.Server.csproj" />
   </ItemGroup>
 
