@@ -19,7 +19,7 @@ namespace IoC
                 MetadataReference.CreateFromFile(typeof(ICommand).Assembly.Location)
             };
 
-            var compilation = CSharpCompilation.Create(classAdapterName)
+            var compilation = CSharpCompilation.Create(classAdapterName + Guid.NewGuid())
                                 .WithOptions(new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary))
                                 .AddReferences(references)
                                 .AddSyntaxTrees(CSharpSyntaxTree.ParseText(codeToCompile));
