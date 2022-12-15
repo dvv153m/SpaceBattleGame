@@ -1,5 +1,4 @@
-﻿
-using SpaceBattleGame.Contracts.Commands;
+﻿using SpaceBattleGame.Contracts.Commands;
 
 namespace SpaceBattleGame.Server.Commands.Move
 {
