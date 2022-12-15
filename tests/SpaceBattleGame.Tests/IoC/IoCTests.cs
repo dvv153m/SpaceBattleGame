@@ -44,7 +44,7 @@ namespace SpaceBattleGame.Server.Tests
             Assert.NotNull(moveCommand2);
         }
 
-        [Fact]
+        /*[Fact]
         public void IoC_Register_MultiThreading()
         {
             var task1 = Task.Factory.StartNew(() => {
@@ -91,6 +91,6 @@ namespace SpaceBattleGame.Server.Tests
             //Assert
             Assert.NotNull(moveCommand);
             //проверка что для разных потоковов будет свой MoveCommand (это с помощью ThreadLocal)
-        }
+        }*/
     }
 }
